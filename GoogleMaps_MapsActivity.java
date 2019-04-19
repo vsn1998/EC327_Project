@@ -1,5 +1,7 @@
 package com.example.googlemaps;
 
+import android.location.Address;
+import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -41,6 +43,10 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
     private GoogleMap mMap;
@@ -55,6 +61,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private com.google.android.gms.location.LocationListener listener;
     private long UPDATE_INTERVAL = 2 * 1000;  /* 10 secs */
     private long FASTEST_INTERVAL = 20000; /* 20 sec */
+    double lat,lng;
 
     private LocationManager locationManager;
     private LatLng latLng;
@@ -102,13 +109,29 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        String address = getAddress(this,lat,lng );
         if (latLng != null) {
-            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Current Location"));
+            mMap.addMarker(new MarkerOptions().position(latLng).title(address));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         }
     }
 
+    // Get address
+    public String getAddress(Context ctx, double lat, double lng){
+        String fullAdd = null;
+        try{
+            Geocoder geocoder = new Geocoder(ctx, Locale.getDefault());
+            List<android.location.Address> addresses = geocoder.getFromLocation(lat, lng,1);
+            if(addresses.size()>0){
+                Address address = addresses.get(0);
+                fullAdd = address.getAddressLine(0);
+
+            }
+        }catch(IOException ex){
+            ex.printStackTrace();
+        }
+        return fullAdd;
+    }
     @Override
     public void onConnected(@Nullable Bundle bundle) {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -158,7 +181,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mLongitudeTextView.setText(String.valueOf(location.getLongitude()));
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         // You can now create a LatLng Object for use with maps
-        latLng = new LatLng(location.getLatitude(), location.getLongitude());
+        lat = location.getLatitude();
+        lng = location.getLongitude();
+        latLng = new LatLng(lat, lng);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         //it was pre written
