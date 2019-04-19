@@ -1,10 +1,15 @@
-package com.example.googlemaps;
+package com.EC327Project;
 
 import android.location.Address;
 import android.location.Geocoder;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -44,6 +49,7 @@ import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -60,17 +66,51 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private LocationRequest mLocationRequest;
     private com.google.android.gms.location.LocationListener listener;
     private long UPDATE_INTERVAL = 2 * 1000;  /* 10 secs */
-    private long FASTEST_INTERVAL = 20000; /* 20 sec */
+    private long FASTEST_INTERVAL = 1800000; /* 30 minutes*/
     double lat,lng;
 
     private LocationManager locationManager;
     private LatLng latLng;
     private boolean isPermission;
 
+    Button save;
+    ArrayList<String> addArray = new ArrayList<>();
+    EditText txt;
+    ListView show;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        txt = (EditText)findViewById(R.id.textInput);
+        show = (ListView)findViewById(R.id.listView);
+        save = (Button)findViewById(R.id.btnSave);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String getInput = txt.getText().toString();
+                String address = getAddress(MapsActivity.this,lat,lng );
+                String addText = getInput + ": " + address;
+                if(addArray.contains(getInput)) {
+                    Toast.makeText(getBaseContext(), "Name already added", Toast.LENGTH_LONG).show();
+                }
+                else if(addArray.contains(address)) {
+                    Toast.makeText(getBaseContext(), "Location already added", Toast.LENGTH_LONG).show();
+                }
+                else if(getInput == null || getInput.trim().equals("")){
+                    Toast.makeText(getBaseContext(), "Input field is empty", Toast.LENGTH_LONG).show();
+                }
+                else{
+                    addArray.add(getInput);
+                    addArray.add(address);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(MapsActivity.this,android.R.layout.simple_list_item_1, addArray);
+                    show.setAdapter(adapter);
+                    ((EditText)findViewById(R.id.textInput)).setText("");
+                }
+            }
+        });
 
         if (requestSinglePermission()) {
             // Obtain the SupportMapFragment and get notified when the map is ready to be used.
@@ -79,8 +119,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
 
-            mLatitudeTextView = (TextView) findViewById((R.id.latitude_textview));
-            mLongitudeTextView = (TextView) findViewById((R.id.longitude_textview));
 
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
@@ -100,19 +138,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
+     * we just add a marker near the users location with the address displayed
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-    //it was pre written
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         String address = getAddress(this,lat,lng );
         if (latLng != null) {
+            float zoomLevel = 14.0f; //This goes up to 21
             mMap.addMarker(new MarkerOptions().position(latLng).title(address));
-            mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel));
         }
     }
 
@@ -177,8 +215,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         String msg = "Updated Location: " +
                 Double.toString(location.getLatitude()) + "," +
                 Double.toString(location.getLongitude());
-        mLatitudeTextView.setText(String.valueOf(location.getLatitude()));
-        mLongitudeTextView.setText(String.valueOf(location.getLongitude()));
         Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
         // You can now create a LatLng Object for use with maps
         lat = location.getLatitude();
