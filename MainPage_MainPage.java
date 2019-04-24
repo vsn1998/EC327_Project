@@ -1,47 +1,61 @@
 package com.example.googlemaps;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Button;
 
 
 
 public class MainPage extends AppCompatActivity {
-
-    private int hours = 0;
+    private Button locationButton;
+    private Button dataButton;
+    public int hours = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_page);
+
+        locationButton = (Button) findViewById(R.id.locationButton);
+        dataButton = (Button) findViewById(R.id.dataButton);
+
+        locationButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (hours == 0) {
+                    openLocationPage();
+                }
+            }
+        });
+
+        dataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (hours != 0) {
+                    openDataPage();
+                }
+            }
+        });
     }
 
-    public void setTouchEnabled(boolean enabled) {
-
+    public void openLocationPage() {
+        Intent intent1 = new Intent(this, MapsActivity.class);
+        startActivity(intent1);
     }
-    public void addHours(View v) {
-        // Get the new value from a user input:
-        EditText hoursEditText = findViewById(R.id.hours);
 
-        // Update the old value:
-        hours = Integer.parseInt (hoursEditText.getText().toString());
-        updateChart();
+    public void openDataPage() {
+        Intent intent2 = new Intent(this, DataPage.class);
+        startActivity(intent2);
     }
 
 
 
-    private void updateChart(){
-        // Update the text in a center of the chart:
-        //TextView numberOfHours = findViewById(R.id.number_of_hours);
-        //numberOfHours.setText(String.valueOf(hours) + " / " + 24);
 
-        // Calculate the slice size and update the pie chart:
-        ProgressBar pieChart = findViewById(R.id.stats_progressbar);
-        double d = (double) hours / 24;
-        int progress = (int) (d * 100);
-        pieChart.setProgress(progress);
-    }
 }
+
