@@ -1,0 +1,44 @@
+package com.example.googlemaps;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.View.OnKeyListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ProgressBar;
+import android.widget.Toast;
+
+public class DataPage extends MainPage {
+    private EditText edittext;
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_datapage);
+
+    }
+    public void addHours(View v) {
+        // Get the new value from a user input:
+        EditText hoursEditText = findViewById(R.id.hours);
+
+        // Update the old value:
+        hours = Integer.parseInt(hoursEditText.getText().toString());
+        updateChart();
+    }
+
+
+    private void updateChart() {
+        // Update the text in a center of the chart:
+        //TextView numberOfHours = findViewById(R.id.number_of_hours);
+        //numberOfHours.setText(String.valueOf(hours) + " / " + 24);
+
+        // Calculate the slice size and update the pie chart:
+        ProgressBar pieChart = findViewById(R.id.stats_progressbar);
+        double d = (double) hours / 24;
+        int progress = (int) (d * 100);
+        pieChart.setProgress(progress);
+    }
+}
