@@ -37,14 +37,15 @@ public class HomeActivity extends AppCompatActivity {
     }
 
 
+    public void btn2loc(View v){
+        test.setText("loc clicked");
+        Intent intent1 = new Intent(HomeActivity.this,MapsActivity.class);
+        startActivity(intent1);
+    }
+
     public void btnClicked(View v){
 
         switch (v.getId()){
-
-            case(R.id.home2loc):
-                test.setText("loc clicked");
-                Intent intent1 = new Intent(HomeActivity.this,MapsActivity.class);
-                startActivity(intent1);
 
             case(R.id.btnAdd):
                 Intent intent2 = new Intent(HomeActivity.this,AddDataActivity.class);
