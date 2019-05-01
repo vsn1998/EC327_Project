@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EC327 Project</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="tohome"><![CDATA[>Home]]></string>
+    <string name="toloc"><![CDATA[>Location]]></string>
+    <string name="sync">Sync</string>
+    <string name="add">ADD</string>
+</resources>
