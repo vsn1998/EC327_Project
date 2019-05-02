@@ -18,3 +18,5 @@ bottom chart the same so that you may keep the information for the future.
 
 Click the location page to find out where you've been for the past 8 hours, and give it a name so you can track your time accordingly. 
 Make sure to save this name! 
+
+Happy tracking! :) 
