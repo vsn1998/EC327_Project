@@ -189,8 +189,8 @@ public class AddData extends AppCompatActivity {
                 String str_time = new String(bt,0,lent);
                 fis_t.close();
 
-                String strarray_name[] = str_name.split("|---|");
-                String strarray_time[] = str_time.split("|---|");
+                String strarray_name[] = str_name.split(" ");
+                String strarray_time[] = str_time.split(" ");
 
                 String loc_data = "";
 
