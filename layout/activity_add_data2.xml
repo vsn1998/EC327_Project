@@ -21,16 +21,18 @@
 
     <EditText
         android:id="@+id/activity1"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/et_simple"
         android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
         android:hint="Activity 1"
         android:textColor="#707070"
         android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/hours1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add2home" />
 
@@ -60,16 +62,18 @@
 
     <EditText
         android:id="@+id/activity2"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/et_simple"
         android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
         android:hint="Activity 2"
         android:textColor="#707070"
         android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/hours2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activity1" />
 
@@ -99,16 +103,18 @@
 
     <EditText
         android:id="@+id/activity3"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/et_simple"
         android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
         android:hint="Activity 3"
         android:textColor="#707070"
         android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/hours3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activity2" />
 
@@ -138,16 +144,18 @@
 
     <EditText
         android:id="@+id/activity4"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/et_simple"
         android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
         android:hint="Activity 4"
         android:textColor="#707070"
         android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/hours4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activity3" />
 
@@ -177,16 +185,18 @@
 
     <EditText
         android:id="@+id/activity5"
-        android:layout_width="200dp"
+        android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="15dp"
         android:layout_marginTop="15dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/et_simple"
         android:fontFamily="sans-serif-light"
         android:gravity="center_horizontal"
         android:hint="Activity 5"
         android:textColor="#707070"
         android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/hours5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/activity4" />
 
@@ -248,6 +258,7 @@
         android:text="waiting for location data"
         android:fontFamily="sans-serif-light"
         android:textSize="15dp"
+        android:gravity="center_horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
