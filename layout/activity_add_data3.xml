@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TargetActivity"
+    android:background="@drawable/the_background">
+
+    <EditText
+        android:id="@+id/dhours1"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@id/dbtnSave4add" />
+
+    <EditText
+        android:id="@+id/dactivity1"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 1"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dadd2home" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dbtnSave4add" />
+
+    <EditText
+        android:id="@+id/dhours2"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@id/dhours1" />
+
+    <EditText
+        android:id="@+id/dactivity2"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 2"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dactivity1" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dhours1" />
+
+    <EditText
+        android:id="@+id/dhours3"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@id/dhours2" />
+
+    <EditText
+        android:id="@+id/dactivity3"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 3"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dactivity2" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dhours2" />
+
+    <EditText
+        android:id="@+id/dhours4"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@id/dhours3" />
+
+    <EditText
+        android:id="@+id/dactivity4"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 4"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dactivity3" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dhours3" />
+
+    <EditText
+        android:id="@+id/dhours5"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@id/dhours4" />
+
+    <EditText
+        android:id="@+id/dactivity5"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 5"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dactivity4" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dhours4" />
+
+    <ImageButton
+        android:id="@+id/dbtnSave4add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#E08E79"
+        android:src="@drawable/btn_confirm"
+        android:onClick="daddClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/dadd2home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#E08E79"
+        android:onClick="daddClicked"
+        android:src="@drawable/btn_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="sans-serif-light"
+        android:text="Set Target"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/dactivity1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dbtnSave4add" />
+
+
+</android.support.constraint.ConstraintLayout>

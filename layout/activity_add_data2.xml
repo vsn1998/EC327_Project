@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddData"
+    android:background="@drawable/the_background">
+
+    <EditText
+        android:id="@+id/hours1"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView4"
+        app:layout_constraintTop_toBottomOf="@id/btnSave4add" />
+
+    <EditText
+        android:id="@+id/activity1"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 1"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add2home" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnSave4add" />
+
+    <EditText
+        android:id="@+id/hours2"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@id/hours1" />
+
+    <EditText
+        android:id="@+id/activity2"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 2"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity1" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hours1" />
+
+    <EditText
+        android:id="@+id/hours3"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintTop_toBottomOf="@id/hours2" />
+
+    <EditText
+        android:id="@+id/activity3"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 3"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hours2" />
+
+    <EditText
+        android:id="@+id/hours4"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView7"
+        app:layout_constraintTop_toBottomOf="@id/hours3" />
+
+    <EditText
+        android:id="@+id/activity4"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 4"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity3" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hours3" />
+
+    <EditText
+        android:id="@+id/hours5"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/et_location_name"
+        android:fontFamily="sans-serif-light"
+        android:inputType="textAutoCorrect"
+        app:layout_constraintEnd_toStartOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@id/hours4" />
+
+    <EditText
+        android:id="@+id/activity5"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/et_simple"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center_horizontal"
+        android:hint="Activity 5"
+        android:textColor="#707070"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/activity4" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="sans-serif-light"
+        android:text="hrs"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hours4" />
+
+    <ImageButton
+        android:id="@+id/btnSave4add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="#E08E79"
+        android:src="@drawable/btn_confirm"
+        android:onClick="addClicked"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/add2home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="#E08E79"
+        android:onClick="addClicked"
+        android:src="@drawable/btn_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/block"
+        android:layout_width="0dp"
+        android:layout_height="5dp"
+        android:layout_marginTop="20dp"
+        android:background="#EBE5CE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity5" />
+
+    <TextView
+        android:id="@+id/location_display"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="20dp"
+        android:text="waiting for location data"
+        android:fontFamily="sans-serif-light"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/block" />
+
+
+</android.support.constraint.ConstraintLayout>
