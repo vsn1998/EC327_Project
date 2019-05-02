@@ -260,17 +260,18 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
-    double firstLat = lat; //initial latitude (before change)
-    double firstLng = lng; //initial longitude
     double timeDiffHour; //time spent at location in hours
 
     @Override
     public void onLocationChanged(Location location) {
-        String msg = "Updated Location: " +
-                Double.toString(location.getLatitude()) + "," +
-                Double.toString(location.getLongitude());
+        String address = getAddress(MapsActivity.this,lat,lng);
+        String msg = "Updated Location: " + address;
+             //   Double.toString(location.getLatitude()) + "," +
+              //  Double.toString(location.getLongitude());
         makeText(this, msg, Toast.LENGTH_SHORT).show();
         // You can now create a LatLng Object for use with maps
+        double firstLat = lat; //initial latitude (before change)
+        double firstLng = lng; //initial longitude
         lat = location.getLatitude(); //current latitude
         lng = location.getLongitude(); //current longitude
         latLng = new LatLng(lat, lng);
@@ -439,8 +440,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             FileOutputStream f_name = new FileOutputStream(location,true);
             int i = 0;
             String name = "";
-            for(String temp:addArray){
-                name = name + "|---|" + temp;
+            for(String temp:namesArray){
+                name = name + " " + temp;
                 i++;
             }
             f_name.write(name.getBytes());
@@ -450,7 +451,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             i = 0;
             String time = "";
             for(double temp:timeSpentAtLocation){
-                time = time + "|---|" + temp;
+                time = time + " " + temp;
                 i++;
             }
             f_time.write(time.getBytes());
@@ -464,3 +465,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         startActivity(intent);
     }
 }
+
